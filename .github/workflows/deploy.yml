@@ -14,19 +14,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Step 1: Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build project
-        run: |
-          echo "Building project..."
-          mkdir public
-          echo "<h1>My Deployment Works!</h1>" > public/index.html
+      # Step 2: No build needed for HTML/CSS/JS
+      - name: Prepare project
+        run: echo "Static HTML project, no build required"
 
+      # Step 3: Upload all files in the repository root to GitHub Pages
       - name: Upload static site files
         uses: actions/upload-pages-artifact@v2
         with:
-          path: public
+          path: .  # deploy everything in the root
 
   deploy:
     runs-on: ubuntu-latest
