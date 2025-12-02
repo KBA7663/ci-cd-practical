@@ -12,14 +12,13 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: |
-          echo "No dependencies to install"
+      - name: Verify index.html exists
+        run: ls -l
 
-      - name: Run tests
+      - name: Run a test
         run: |
-          echo "No tests yet"
+          echo "CI pipeline is running"
+          cat index.html
 
       - name: Build project
-        run: |
-          echo "Build step completed"
+        run: echo "Build step completed"
