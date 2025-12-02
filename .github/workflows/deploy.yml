@@ -24,7 +24,7 @@ jobs:
 
       # Step 3: Upload all files in the repository root to GitHub Pages
       - name: Upload static site files
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .  # deploy everything in the root
 
